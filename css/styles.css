@@ -1,0 +1,305 @@
+/* INITIALIZING */
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1rem = 10px */
+
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* GLOBALS */
+:root {
+    --open-sans: 'Open Sans', sans-serif;
+    --pt-sans: 'PT Sans', sans-serif;
+    --brown: rgb(120, 77, 60);
+    --gray: #E1E1E1;
+}
+
+body {
+    font-family: var(--open-sans);
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+.container {
+    max-width: 120rem;
+    width: 90%; /* genera margen a los costados */
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--pt-sans);
+    line-height: 1;
+}
+
+h1 {
+    font-size: 4.8rem;;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3.2rem;
+}
+
+h4 {
+    font-size: 2.8rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* UTILITIES */
+.no-margin {
+    margin: 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.normal {
+    font-weight: 400;
+}
+
+/* HEADER */
+
+/* compatibilidad para webp*/
+.webp .header {
+    background-image: url(/img/banner.webp);
+}
+
+.no-webp .header {
+    background-image: url(/img/banner.jpg);
+}
+
+.header { /* configures header-background image style*/
+    height: 60rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+/* texto principal y secundario del header*/
+.header__text {
+    color: white;
+    margin-top: 5rem;
+}
+
+@media (min-width: 768px) {
+    .header__text {
+        margin-top: 15rem;
+    }
+}
+
+/* separacion de la barra superior*/
+.top-bar {
+    padding-top: 2rem;
+}
+
+/* ajuste de la barra superior horizontal para res mayores a 768px */
+@media (min-width: 768px) {
+    .top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/* barra nav horizontal para res mayores a 768px */
+@media (min-width: 768px) {
+    .nav {
+        display: flex;
+        gap: 2rem;
+    }
+}
+
+/* barra nav vertical para res menores a 768px */
+.nav__link {
+    display: block;
+    font-size: 1.8rem;
+}
+
+/* MAIN CONTENT */
+
+/* divide el contenido en dos columnas para res mayores a 768px */
+@media (min-width: 768px) {
+    .main-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 4rem;
+    }
+}
+
+/* BLOG */
+
+/* configura linea separadora entre posts */
+.post {
+    border-bottom: 1px solid var(--gray);
+    margin-bottom: 2rem;
+}
+
+/* elimina ultima linea del ultimo post */
+.post:last-of-type {
+    border: none;
+    margin-bottom: 0;
+}
+
+/* configura botones */
+.button {
+    font-family: var(--pt-sans);
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    padding: 1rem 4rem;
+    border: none;
+    font-weight: 700;
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* configura botones para res mayores a 768px */
+@media (min-width: 768px) {
+    .button {
+        width: auto;
+    }
+    
+}
+
+/* modificador del color de fondo del boton */
+.button--black {
+    background-color: black;
+}
+
+/* SIDEBAR */
+/* modificador del color de fondo del boton */
+.button--brown {
+    background-color: var(--brown);
+}
+
+/* elimina decoracion de la lista */
+.courses-list {
+    list-style: none;
+}
+
+/* agrega linea de separacion entre cursos */
+.courses-list {
+    border-bottom: 1px solid var(--gray);
+    margin-bottom: 2rem;
+}
+
+/* elimina linea de separacion del ultimo curso */
+.courses-list:last-of-type {
+    border: none;
+    margin-bottom: 0;
+}
+
+/* FOOTER */
+.footer {
+    background-color: black;
+    padding: 3rem 0;
+    margin-top: 4rem;
+}
+
+/* ABOUT US SECTION */
+
+
+@media (min-width: 768px) {
+    .about-us {
+        display: flex;
+        gap: 2rem;
+    }
+
+    /* crea el ancho de cada columna a mostrar con flexbox con res mayores a 768px*/
+    .about-us__image,
+    .about-us__text {
+        flex-basis: 50%; 
+    }
+
+    .about-us__image {
+        margin-top: 2rem;
+    }
+}
+
+/* COURSE SECTION */
+
+/* linea de separacion entre cursos*/
+.course {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--gray);
+}
+
+/* eliminar ultima linea */
+.course:last-of-type {
+    border: none;
+}
+
+.course__image {
+    margin-bottom: 3rem;
+}
+
+/* visualisacion de 2 columnas para res mayores a 768px */
+@media (min-width: 768px) {
+    .course {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 2rem;
+    }
+}
+
+/* CONTACTO */
+
+.contact__background {
+    background-image: url(/img/contacto.jpg);
+    height: 40rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.form {
+    background-color: white;
+    margin: -5rem auto 0 auto; /* efecto colocar por encima del background*/
+    width: 95%;
+    padding: 5rem;
+}
+
+.space {
+    display: flex;
+    gap: 2rem;
+}
+
+.space__label {
+    flex-basis: 15%; /* tamaño del contenedor que ocupa*/
+    min-width: 7rem; /* ancho minimo para evitar overflow en res pequeñas */
+    text-align: right;
+}
+
+.space__field {
+    flex-basis: 85%;
+    min-width: 15rem;
+    margin-bottom: 2rem;
+}
+
+.space__field--textarea {
+    resize: none;
+    height: 15rem;
+}
